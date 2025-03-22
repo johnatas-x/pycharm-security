@@ -12,7 +12,7 @@ fi
 /opt/pycharm-community/bin/inspect.sh "$1" "$2" out/ -format json -v0 -d "$4" 2> errors.log
 
 set -e
-echo "::set-output name=result::out/"
+echo "result=out/" >> $GITHUB_OUTPUT
 HASWARNINGS=0
 for i in $(find out -name "*.json"); do
     RUNHASWARNINGS=0
